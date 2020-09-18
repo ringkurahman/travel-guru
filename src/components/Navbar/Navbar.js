@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { UserContext } from '../../App';
 import logo from '../../Image/Logo.png';
 import './Navbar.css';
 
 const Navbar = () => {
 
+  const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+
     return (
-      <div className="bg-dark">
+      <div className='bg-dark'>
         <div className='container'>
           <nav className='navbar navbar-expand-lg navbar-light'>
             <Link to='/' className='navbar-brand'>
@@ -53,7 +56,7 @@ const Navbar = () => {
                     className='btn btn-warning btn-lg button-font ml-5'
                   >
                     <span className='ml-2 mr-2 text-dark font-weight-bold letter-spacing'>
-                      Login
+                      {loggedInUser.email ? loggedInUser.name.slice(0, 6) : 'Login'}
                     </span>
                   </Link>
                 </li>

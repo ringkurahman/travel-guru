@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { UserContext } from '../../App';
 import logo from '../../Image/Logo.png';
 import DataCard from '../DataCard/DataCard';
 import './Header.css';
 
 
 const Header = () => {
+
+  const [loggedInUser, setLoggedInUser] = useContext(UserContext);
 
   return (
     <header className='header-hero'>
@@ -55,7 +58,9 @@ const Header = () => {
                   className='btn btn-warning btn-lg button-font ml-5'
                 >
                   <span className='ml-2 mr-2 text-dark font-weight-bold letter-spacing'>
-                    Login
+                    {loggedInUser.email
+                      ? loggedInUser.name.slice(0, 6)
+                      : 'Login'}
                   </span>
                 </Link>
               </li>
@@ -73,10 +78,7 @@ const Header = () => {
                 headquarters in southeastern Bangladesh. It is famous mostly for
                 its long natural sandy beach, and it...
               </p>
-              <Link
-                to='/'
-                className='btn btn-warning btn-lg button-font mt-2'
-              >
+              <Link to='/' className='btn btn-warning btn-lg button-font mt-2'>
                 <span className='ml-3 mr-2 text-dark font-weight-bold letter-spacing'>
                   Booking 🡲
                 </span>
@@ -84,7 +86,7 @@ const Header = () => {
             </div>
             <div className='col-7 overflow-hidden'>
               <div className='d-flex justify-content-between'>
-                  <DataCard></DataCard>
+                <DataCard></DataCard>
               </div>
             </div>
           </div>
