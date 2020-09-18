@@ -37,7 +37,7 @@ function Login() {
   // Call state location API
   const location = useLocation();
   // Set state location and URL path for check whether user logged in or not and redirect to shipment page
-  let { from } = location.state || { from: { pathname: '/' } };
+  let { from } = location.state || { from: { pathname: '/rooms' } };
 
   // Google sign in event handler
   const googleSignIn = () => {
