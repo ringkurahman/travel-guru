@@ -1,0 +1,42 @@
+.header-hero {
+  min-height: calc(100vh - 0px);
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url('../../Image/Rectangle1.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.brand-logo {
+  height: 50px;
+}
+.button-font {
+  font-size: 14px !important;
+}
+a:focus,
+a:hover,
+a:visited,
+a:link,
+a:active {
+  text-decoration: none;
+}
+input,
+select,
+textarea {
+  max-width: 300px;
+}
+.search-form {
+  width: 280px !important;
+  background: transparent;
+  font-family: 'FontAwesome';
+}
+.search-form:focus {
+  background: transparent;
+  outline: none;
+  color: #fff;
+  font-family: 'FontAwesome';
+}
+input::placeholder {
+  color: #fff !important;
+}
+
+
